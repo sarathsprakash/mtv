@@ -1,0 +1,171 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "Mtv-Streaming Platform",
+      "version": "1.0.0",
+      "title": "Streaming"
+    },
+    "servers": [
+      {
+        "url": "/"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Stream Service",
+        "description": "Stream service APIs"
+      }
+    ],
+    "paths": {
+      "/api/stream/get_movie/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Movie id ",
+            "type": "number"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Stream Service"
+          ],
+          "summary": "Returns movie details by given id",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/api/stream/get_movies": {
+        "get": {
+          "tags": [
+            "Stream Service"
+          ],
+          "summary": "Returns all available movies",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/api/stream/get_genres": {
+        "get": {
+          "tags": [
+            "Stream Service"
+          ],
+          "summary": "Returns all genres",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/api/stream/add_movie": {
+        "post": {
+          "tags": [
+            "Stream Service"
+          ],
+          "summary": "Adds a new movie",
+          "requestBody": {
+            "description": "Add movie Post object",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/addMoviePostBody"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/api/stream/delete_movie/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Movie id ",
+            "type": "number"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Stream Service"
+          ],
+          "summary": "Delete movie by given id ",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/api/stream/expiring_movies/{days}": {
+        "parameters": [
+          {
+            "name": "days",
+            "in": "path",
+            "required": true,
+            "description": "Expiring movies in default is 30",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Stream Service"
+          ],
+          "summary": "Get movies expriring in given days",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      }
+  },
+  "components": {
+    "schemas": {
+      "addMoviePostBody": {
+        "type": "object",
+        "properties": {
+          "movie": {
+            "type": "object",
+            "properties": {
+              "title":{
+                "type": "string",
+                "format": "string"
+              },
+              "release_year":{
+                "type": "number",
+                "minimum": 1753,
+                "maximum": 2021
+              },
+              "expiry_date":{
+                "type": "string",
+                "format": "date"
+              }
+            }
+          },
+          "genres": {
+            "type": "array",
+            "items":{
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

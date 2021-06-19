@@ -1,0 +1,13 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "ALTV-Streaming Platform",
+      "version": "1.0.0",
+      "title": "ALTV-Streaming"
+    },
+    "servers": [
+      {
+        "url": "/"
+      }
+    ]
+}
