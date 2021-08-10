@@ -1,4 +1,4 @@
-# Mtv - A represtantion project for microservice pattern
+# Mtv - A representational project for microservice pattern
 This project makes use of orchestaration based SAGA pattern. There are two major components in this :
 * Frontend (A [Flask](https://flask.palletsprojects.com/en/2.0.x/) app)
 * Message Broker ([RabbitMQ](https://www.rabbitmq.com/))
