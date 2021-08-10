@@ -3,7 +3,10 @@
     "info": {
       "description": "Mtv-Streaming Platform",
       "version": "1.0.0",
-      "title": "Mtv-Streaming Platform"
+      "title": "Mtv-Streaming Platform",
+      "contact": {
+        "email": "sarathsprakash@gmail.com"
+       }
     },
     "servers": [
       {
