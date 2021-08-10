@@ -30,3 +30,5 @@ The frontend is as mentioned  a flask app, which get the http API requests from 
 ## Stream Service
 The stream service is a Nameko service that exposes api to get, add, delete movies. The http://localhost/swagger directly load the docs of the Stream service.
 The underlying database is Mysql. This is an [sqlalchemy](https://docs.sqlalchemy.org/en/14/orm/tutorial.html) ORM based. Its allows to easily create the db schema and not to write custom queries. Also [marshmallow](https://marshmallow.readthedocs.io/en/stable/) is used to work with ORM for serialization, de-serialization of data from and to the mysql DB. 
+
+-@github/sarathsprakash
